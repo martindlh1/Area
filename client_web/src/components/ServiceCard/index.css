@@ -1,0 +1,45 @@
+.area-service-card-container {
+  text-decoration: none;
+  margin: 14px;
+  padding: 10px;
+  width: 225px;
+  background-color: #4461f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1.5px 6px 0 rgb(0 0 0 / 24%);
+  border-radius: 10px;
+}
+
+.area-service-card-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.area-service-card-title {
+  font-weight: 800;
+  font-size: 26px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.area-service-card-login {
+  font-weight: 700;
+  font-size: 24px;
+
+  color: #eaf0f7;
+
+  border: 3px solid #eaf0f7;
+  border-radius: 10px;
+
+  text-align: center;
+
+  width: 175px;
+
+  cursor: pointer;
+}

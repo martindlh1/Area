@@ -1,0 +1,22 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.title-text {
+  color: #4461f2;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.title-line {
+  color: red;
+  width: 50px;
+  border-radius: 24px;
+  margin: 0px;
+  padding: 0px;
+}

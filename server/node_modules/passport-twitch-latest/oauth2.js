@@ -1,0 +1,111 @@
+const OAuth2Strategy = require("passport-oauth2");
+const InternalOAuthError = OAuth2Strategy.InternalOAuthError;
+const request = require('request');
+
+
+/**
+ * `Strategy` constructor.
+ *
+ * The Twitch authentication strategy authenticates requests by delegating to
+ * Twitch using the OAuth 2.0 protocol.
+ *
+ * Applications must supply a `verify` callback which accepts an `accessToken`,
+ * `refreshToken` and service-specific `profile`, and then calls the `done`
+ * callback supplying a `user`, which should be set to `false` if the
+ * credentials are not valid.  If an exception occured, `err` should be set.
+ *
+ * Options:
+ *   - `clientID`      your Twitch application"s client id
+ *   - `clientSecret`  your Twitch application"s client secret
+ *   - `callbackURL`   URL to which Twitch will redirect the user after granting authorization
+ *   - `pem`           Signing certificate used for decoding a user's OIDC token
+ *
+ * Examples:
+ *
+ *     passport.use(new TwitchStrategy({
+ *         clientID: "123-456-789",
+ *         clientSecret: "shhh-its-a-secret"
+ *         callbackURL: "https://www.example.net/auth/twitch/callback"
+ *       },
+ *       function(accessToken, refreshToken, profile, done) {
+ *         User.findOrCreate(..., function (err, user) {
+ *           done(err, user)
+ *         })
+ *       }
+ *     ))
+ *
+ * @param {Object} options
+ * @param {Function} verify
+ * @api public
+ */
+class Strategy extends OAuth2Strategy {
+    constructor(options, verify) {
+        options = options || {};
+        options.authorizationURL = options.authorizationURL || "https://id.twitch.tv/oauth2/authorize";
+        options.tokenURL = options.tokenURL || "https://id.twitch.tv/oauth2/token";
+        
+        super(options, verify);
+
+        this.name = "twitch";
+        this.pem = options.pem;
+
+        this._oauth2.setAuthMethod("Bearer");
+        this._oauth2.useAuthorizationHeaderforGET(true);
+
+        this.clientId = options.clientID;
+    }
+    
+    /**
+     * Retrieve user profile from Twitch.
+     *
+     * This function constructs a normalized profile, with the following properties:
+     *
+     *   - `provider`         always set to `twitch`
+     *   - `id`
+     *   - `username`
+     *   - `displayName`
+     *
+     * @param {String} accessToken
+     * @param {Function} done
+     * @api protected
+     */
+    userProfile(accessToken, done) {
+        const options = {
+            url: 'https://api.twitch.tv/helix/users',
+            method: 'GET',
+            headers: {
+              'Client-ID': this.clientId,
+              'Accept': 'application/vnd.twitchtv.v5+json',
+              'Authorization': 'Bearer ' + accessToken
+            }
+        };
+
+        request(options, function (error, response, body) {
+            if (error) {
+                return done(new InternalOAuthError("failed to fetch user profile", err));
+            }
+            if (response && response.statusCode == 200) {
+                try {
+                    done(null, {
+                        ...JSON.parse(body).data[0],
+                        provider: 'twitch'
+                    });
+                } catch(e) {
+                    done(e);
+                }
+            } else {
+              done(JSON.parse(body));
+            }
+        });
+    }
+
+    authorizationParams(options) {
+        const params = {};
+        if (typeof options.forceVerify !== "undefined") {
+            params.force_verify = !!options.forceVerify;
+        }
+        return params;
+    }
+}
+
+module.exports = Strategy

@@ -1,0 +1,87 @@
+.single-action-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.single-action-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.param-card-container {
+  background-color: #4461f2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 225px;
+  min-height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 12px 16px 4px rgba(68, 97, 242, 0.15);
+  margin: 10px;
+  /* height: 40px; */
+  cursor: pointer;
+}
+
+.param-card-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+
+  letter-spacing: 0.09em;
+
+  color: #ffffff;
+}
+.param-card-input {
+  background: #eaf0f7;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 4px;
+  text-align: center;
+  width: 125px;
+
+  font-weight: 500;
+  font-size: 16px;
+
+  color: #4f555a;
+}
+
+.single-action-confirm-button {
+  position: absolute;
+  bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.single-action-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .single-action-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 768px; */
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .single-action-container {
+    justify-content: flex-start;
+  }
+}

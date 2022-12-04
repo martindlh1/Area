@@ -1,0 +1,151 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.login-area-logo {
+  width: 200px;
+  margin: 40px;
+}
+
+.sign-button {
+  position: relative;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  color: "black";
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 35px;
+
+  padding: 10px 25px;
+  margin: 2px;
+}
+
+.sign-button.selected {
+  background: none;
+  box-shadow: none;
+  color: #4461f2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.line {
+  border: 3px solid #4461f2;
+  position: absolute;
+  width: 25px;
+  border-radius: 10px;
+  transform: translateY(8px);
+}
+
+.login-inputs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #4f555a;
+
+  background: #eaf0f7;
+  border-radius: 10px;
+
+  padding: 5px 10px;
+  border: none;
+
+  height: 40px;
+  width: 250px;
+
+  margin: 8px;
+}
+
+.login-input-show-password {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+
+  cursor: pointer;
+
+  color: #000000;
+
+  text-align: right;
+  width: 250px;
+}
+
+.basic-button.login {
+  width: 270px;
+  margin: 20px;
+}
+
+.login-oauth-divider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-oauth-divider-line {
+  width: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.login-oauth-divider-text {
+  font-weight: 400;
+  font-size: 12px;
+
+  margin: 10px;
+
+  color: #000000;
+}
+
+.login-oauth-button {
+  height: 25px;
+}
+
+.login-oauth-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px;
+  width: 270px;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.13);
+  border-radius: 10px;
+  border: 1px solid #dddfdd;
+  cursor: pointer;
+}
+
+.login-error-msg {
+  color: red;
+  margin: 4px;
+}
+
+.download-apk-container {
+  margin: 20px;
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,40 @@
+.action-card-container {
+  background-color: #4461f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 225px;
+  min-height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1.5px 6px 0 rgb(0 0 0 / 24%);
+  margin: 10px;
+  /* height: 40px; */
+}
+
+.action-card-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 8px;
+}
+
+.action-card-title {
+  margin-left: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  /* or 125% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.09em;
+
+  color: #ffffff;
+}
+
+.action-card-details {
+  margin: 4px;
+  color: #ffffff;
+}

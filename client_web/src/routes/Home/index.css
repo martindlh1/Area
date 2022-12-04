@@ -1,0 +1,90 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex: 0 1 auto;
+}
+
+.home-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.home-title-text {
+  color: #4461f2;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.home-title-line {
+  color: red;
+  width: 50px;
+  border-radius: 24px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.home-header-profile-icon {
+  margin: 20px;
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+}
+
+.home-header-add-icon {
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.home-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.home-body-title {
+  font-weight: 500;
+  font-size: 16px;
+
+  color: #474554;
+  margin: 10px;
+}
+
+.home-body-areas-container {
+  margin-bottom: 75px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1024px;
+}
+
+.home-first-area-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  text-decoration: none;
+}

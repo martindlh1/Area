@@ -1,0 +1,40 @@
+.admin-logout {
+  text-decoration: none;
+  color: #4461f2;
+  font-weight: bold;
+  font-size: 24px;
+
+  border: 3px solid #4461f2;
+
+  border-radius: 10px;
+
+  padding: 5px 10px;
+
+  margin: 15px;
+}
+
+.admin-user-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #4461f2;
+  box-shadow: 0px 12px 21px 4px rgba(255, 52, 69, 0.15);
+  border-radius: 10px;
+  padding: 16px;
+  width: 250px;
+  height: 75px;
+  margin: 8px;
+
+  font-weight: bold;
+
+  color: white;
+}
+
+.admin-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
